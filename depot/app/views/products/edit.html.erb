@@ -1,11 +1,6 @@
-<p id='notice'><= notice%> </p>
-<h1>Your Pragmatic Catalog</h1>
-<% @products.each do |product| %>
-	<div class="entry">
-		<h3><%= product.title %></h3>
-		<%= sanitize(product.description)%>
-		<div class="price_line">
-			<span class="price"><%= product.price %></span>
-		</div>
-	</div>
-<% end %>
+<h1>Editing Product</h1>
+
+<%= render 'form', product: @product %>
+
+<%= link_to 'Show', @product %> |
+<%= link_to 'Back', products_path %>
