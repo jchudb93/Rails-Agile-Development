@@ -1,2 +1,2 @@
 # Rails-Agile-Development
-From the book Agile Web Development with Rails 5
+From the books Agile Web Development with Rails 5 and Beginning Django E-Commerce
