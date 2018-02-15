@@ -36,9 +36,11 @@ class ProductDetailView(DetailView):
 def product_detail_view(request,pk=None, *args, **kwargs):
 	# instance = Product.objects.get(pk=pk)
 	# instance = get_object_or_404(Product, pk=pk)
-	# 
+	#
+	#
+	instance = Product.objects.get_by_id(pk) 
 	qs = Product.objects.filter(id=pk)
-	instance = Product.objects.get_by_id(pk)
+	
 
 	if qs.exists() and qs.count() == 1:
 		instance = qs.first()
