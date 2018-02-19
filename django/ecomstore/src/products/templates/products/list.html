@@ -1,5 +1,10 @@
-{% for obj in object_list %}
 
-<a href='{{ obj.get_absolute_url }}'> {{ obj.title}} </a><br/>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	{% for obj in object_list %}
 
-{% endfor %}
+	<a href='{{ obj.get_absolute_url }}'> {{ obj.title}} </a><br/>
+
+	{% endfor %}
+{% endblock %}
