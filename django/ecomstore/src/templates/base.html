@@ -9,7 +9,7 @@
     {% block base_head %} {% endblock %}
   </head>
   <body>
-    {% include  'base/nav.html' %}
+    {% include  'base/navbar.html' with brand_name='eCommerce' %}
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     {% block content %} {% endblock %}
     {% include 'base/js.html'%}
