@@ -2,7 +2,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-	{{ object.title }} <br/>
-	{{ object.description }} <br/>
-	<img src='{{ object.image.url }}' class='img-fluid' width="200" height="200" >
+<div class="container">
+	<div class='row'>
+		<div class = 'col'>
+		<h1>{{ object.title }}</h1>
+		{{ object.timestamp|timesince }} ago
+		{{ object.description|linebreaks }} <br/>
+		{% if object.image.url %}
+			<img src="{{ object.image.url|default_if_none:'#' }}" class='img-fluid' width="200" height="200" >
+		{% endif %}
+
+	</div>
+	</div>
+</div>
 {% endblock %}
