@@ -10,8 +10,7 @@ class ProductFeaturedListView(ListView):
 
 	def get_queryset(self, *args, **kwargs):
 		request = self.request
-		return Product.objects.all().featured(
-)
+		return Product.objects.all().featured()
 class ProductFeaturedDetailView(DetailView):
 	queryset = Product.objects.all().featured()
 	template_name = "products/featured-detail.html"
@@ -51,7 +50,7 @@ class ProductDetailSlugView(DetailView):
 		try:
 			instance = Product.objects.get(slug=slug, active=True)
 		except Product.DoesNotExist:
-			raise Http404("Not foun..")
+			raise Http404("Not found..")
 		except Product.MultipleObjectsReturned:
 			qs = Product.objects.filter(slug = slug, active = True)
 			instance = qs.first()
