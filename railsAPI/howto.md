@@ -19,7 +19,17 @@
 `
 
 4. Set the seeds in db/seeds.rb
+
 `rb
 l = Location.create(name: "New York City")
 l.recordings.create(temp:32, status:"cloudy")
 `
+
+5. Set location has many recordings in app/models/location
+`
+	has_many :recordings
+`
+
+6. rake db:seed
+
+7.
